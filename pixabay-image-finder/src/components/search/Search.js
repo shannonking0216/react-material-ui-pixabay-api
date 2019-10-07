@@ -18,9 +18,9 @@ class Search extends Component {
     const val = e.target.value;
     this.setState({ [e.target.name]: val }, () => {
       if (val === " ") {
-        this.setState({ images: [] });
+        this.setState({ images: []});
       } else {
-        axios
+        axios                                                                                 
           .get(
             `${this.state.apiUrl}/?key=${this.state.apiKey}&q=${this.state.searchText}&image_type=photo&per_page=${this.state.amount}&safesearch=true`
           )
