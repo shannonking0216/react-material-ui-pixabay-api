@@ -15,8 +15,11 @@ class Search extends Component {
   };
 
   onTextChange = (e) => {
-      this.setState({[e.target.name]: e.target.value});
-  } 
+      this.setState({[e.target.name]: e.target.value}, ()
+      => {
+          axios.get(`${this.state.apiUrl}/?key=${this.state.apiKey}`)
+      });
+  }; 
 
   render() {
     return (
@@ -44,7 +47,7 @@ class Search extends Component {
         <br />
       </div>
     );
-  }
+  };
 }
 
 export default Search;
