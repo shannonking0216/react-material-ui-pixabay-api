@@ -14,6 +14,10 @@ class Search extends Component {
     images: []
   };
 
+  onTextChange = (e) => {
+      this.setState({[e.target.name]: e.target.value});
+  } 
+
   render() {
     return (
       <div>
@@ -38,7 +42,6 @@ class Search extends Component {
           <MenuItem value={50} primaryText="50" />
         </SelectField>
         <br />
-       
       </div>
     );
   }
