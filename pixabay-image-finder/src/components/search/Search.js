@@ -3,6 +3,7 @@ import TextField from "material-ui/TextField";
 import SelectField from "material-ui/SelectField";
 import MenuItem from "material-ui/MenuItem";
 import axios from "axios";
+import ImageResults from "../image-results/ImageResults";
 
 class Search extends Component {
   state = {
@@ -56,6 +57,10 @@ class Search extends Component {
           <MenuItem value={50} primaryText="50" />
         </SelectField>
         <br />
+        {/* Ternary operator below */}
+        {this.state.images.length > 0 ? (
+          <ImageResults images={this.state.images} />
+        ) : null}
       </div>
     );
   }
